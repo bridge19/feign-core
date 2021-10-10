@@ -66,7 +66,7 @@ public abstract class Feign {
     StringBuilder builder = new StringBuilder();
     builder.append(targetType.getSimpleName());
     builder.append('#').append(method.getName()).append('(');
-    for (Type param : method.getGenericParameterTypes()) {
+    for (Type param : method.getParameterTypes()) {
       param = Types.resolve(targetType, targetType, param);
       builder.append(Types.getRawType(param).getSimpleName()).append(',');
     }
